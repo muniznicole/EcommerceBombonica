@@ -1,0 +1,26 @@
+@startuml
+
+    title Diagrama de Atividades - Bombonica
+
+    start
+
+    :Acessa o site;
+
+    while (Deseja continuar comprando?) is (sim)
+        :Exibe as opções de produto;
+        :Pesquisa por produto;
+        :Exibe os resultados;
+        :Seleciona o produto;
+        :Exibe informações detalhadas;
+        :Adiciona o produto no carrinho;
+    endwhile
+
+    :Exibe mensagem de confirmação;
+    :Acessa o carrinho de compras;
+    :Exibe produtos no carrinho;
+    :Confirma a compra;
+    :Exibe mensagem de confirmação;
+
+    stop
+
+@enduml
