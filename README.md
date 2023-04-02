@@ -20,3 +20,9 @@ DEFININDO O FLUXO DAS ATIVIDADES
 - Exibe produtos no carrinho
 - Confirma a compra
 - Exibe mensagem de confirmação
+
+DESCRIÇÃO RESUMIDA DO DIAGRAMA
+O diagrama UML representa um modelo de classes para um e-commerce de bomboniere com o nome de Bombonica. 
+- O sistema permite o cadastro de usuários que podem adicionar produtos a uma lista de desejos, assim como cadastrar múltiplos endereços e telefones de contato. Os produtos são organizados por tipo de chocolate, sendo que cada produto possui um ID, nome, descrição, preço e estoque. 
+- As compras são realizadas pelos usuários e associadas a um ou mais endereços de entrega, podendo conter múltiplos itens de compra, cada um relacionado a um produto e a um preço específico. Além disso, as compras podem ser associadas a promoções e cupons de desconto. 
+- O pagamento é feito online e requer a associação de um cartão de crédito ou débito cadastrado pelo usuário. As promoções são definidas a partir de um tipo de promoção, que pode ser do tipo desconto, brinde ou frete grátis. Os cupons de desconto, por sua vez, são associados a uma promoção específica e possuem um código único que pode ser utilizado pelos usuários durante o processo de checkout para aplicar o desconto correspondente.

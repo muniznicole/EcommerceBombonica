@@ -32,12 +32,12 @@
         - numero: String
     }
 
-    class Compra{
+    class Compra {
         - id: Long
         - data: Date
     }
 
-    class ItemCompra{
+    class ItemCompra {
         - id: Long
         - quantidade: Integer
         - preco: Double
@@ -55,8 +55,38 @@
         - estado: String 
     }
 
+    class TipoDePromocao {
+        - id: Long
+        - descricao: String
+    }
+
+    class Promocao {
+        - id: Long
+        - descricao: String
+        - desconto: Double
+    }
+
+    class CupomDeDesconto {
+        - id: Long
+        - codigo: String
+        - valor: Double
+    }
+
+    class Cartao {
+        - id: Long
+        - numero: String
+        - nomeTitular: String
+        - dataValidade: Date
+        - codigoSeguranca: String
+    }
+
+    class Pagamento {
+        - id: Long
+        - valor: Double
+    }
+
     Produto "*" --> "1" TipoDeChocolate
-    
+
     Usuario "*" --> "*" Produto: listaDesejo
     Usuario "1" *--> "1" Telefone: celular
     Usuario "1" *--> "1" Telefone: whatsapp
@@ -65,7 +95,15 @@
     Compra "1" *--> "*" ItemCompra
     Compra "*" --> "1" Usuario
     Compra "*" --> "1" Endereco
-     
+    Compra "1" *--> "1" Pagamento
+
     ItemCompra "*" --> "1" Produto
+
+    TipoDePromocao "*" --> "*" Promocao
+    Promocao "1" *--> "0..*" Produto
+    Promocao "*" --> "0..1" CupomDeDesconto
+    Promocao "*" --> "1" TipoDePromocao
+
+    Pagamento --> Cartao: utiliza
 
 @enduml
