@@ -1,5 +1,5 @@
-@startuml   
-    
+@startuml Bombonica
+
     title Ecommerce Bombonica - UML
 
     class Produto {
@@ -11,11 +11,11 @@
     }
 
     enum TipoDeChocolate {
-        - branco: int
-        - aoLeite: int
-        - meioAmargo: int
-        - alcoolico: int
-        - trufa: int
+        - branco
+        - aoLeite
+        - meioAmargo
+        - alcoolico
+        - trufa
     }
 
     class Usuario {
@@ -100,8 +100,8 @@
     ItemCompra "*" --> "1" Produto
 
     TipoDePromocao "*" --> "*" Promocao
-    Promocao "1" *--> "0..*" Produto
-    Promocao "*" --> "0..1" CupomDeDesconto
+    Promocao "1" *--> "*" Produto
+    Promocao "*" --> "1" CupomDeDesconto
     Promocao "*" --> "1" TipoDePromocao
 
     Pagamento --> Cartao: utiliza
