@@ -8,10 +8,15 @@ Tipo de Negócio: B2C
 Referência de interface: https://www.brasilcacau.com.br/
 
 CRUDs QUE SERÃO IMPLEMENTADOS
-- CRUD de Produto; 
+- CRUD de Produto;
+- CRUD de BarraChocolate; 
 - CRUD de Usuario; 
 - CRUD de Compra;
-- CRUD de Endereco.
+- CRUD de CupomDesconto;
+- CRUD de TipoPromocao;
+- CRUD de Endereco;
+- CRUD de Estado;
+- CRUD de Municipio.
 
 DEFININDO O FLUXO DAS ATIVIDADES
 - Acessa o site

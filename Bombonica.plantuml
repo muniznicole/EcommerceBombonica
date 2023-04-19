@@ -10,13 +10,13 @@
         - estoque: Integer
     }
 
-    class BarraDeChocolate {
+    class BarraChocolate {
         - tipoDeChocolate: TipoDeChocolate
         - peso: Double
         - ingredientes: String
     }
 
-    enum TipoDeChocolate {
+    enum TipoChocolate {
         AO_LEITE,
         AMARGO,
         BRANCO,
@@ -68,7 +68,7 @@
         - nomeEstado: String
     }
 
-    class TipoDePromocao {
+    class TipoPromocao {
         - id: Long
         - descricao: String
     }
@@ -79,15 +79,15 @@
         - desconto: Double
     }
 
-    class CupomDeDesconto {
+    class CupomDesconto {
         - id: Long
         - codigo: String
         - valor: Double
     }
 
-    Produto <|-- BarraDeChocolate
+    Produto <|-- BarraChocolate
 
-    TipoDeChocolate "1" --> "*" BarraDeChocolate
+    TipoChocolate "1" --> "*" BarraChocolate
 
     Usuario "*" --> "*" Produto: listaDesejo
     Usuario "1" *--> "1" Telefone: celular
@@ -103,10 +103,9 @@
     Compra "1" *--> "1" Pagamento
 
     ItemCompra "*" --> "1" Produto
-
-    TipoDePromocao "*" --> "*" Promocao
+   
     Promocao "1" *--> "*" Produto
-    Promocao "*" --> "1" CupomDeDesconto
-    Promocao "*" --> "1" TipoDePromocao
+    Promocao "*" --> "1" CupomDesconto
+    Promocao "*" --> "1" TipoPromocao
 
 @enduml
