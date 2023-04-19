@@ -10,12 +10,17 @@
         - estoque: Integer
     }
 
+    class BarraDeChocolate {
+        - tipoDeChocolate: TipoDeChocolate
+        - peso: Double
+        - ingredientes: String
+    }
+
     enum TipoDeChocolate {
-        - branco
-        - aoLeite
-        - meioAmargo
-        - alcoolico
-        - trufa
+        AO_LEITE,
+        AMARGO,
+        BRANCO,
+        MEIO_AMARGO,
     }
 
     class Usuario {
@@ -51,8 +56,16 @@
         - numero: String
         - complemento: String
         - cep: String
-        - municipio: String
-        - estado: String 
+        - Municipio: String
+        - Estado: String 
+    }
+
+    class Municipio{
+        - nomeMunicipio: String
+    }
+
+    class Estado {
+        - nomeEstado: String
     }
 
     class TipoDePromocao {
@@ -72,25 +85,17 @@
         - valor: Double
     }
 
-    class Cartao {
-        - id: Long
-        - numero: String
-        - nomeTitular: String
-        - dataValidade: Date
-        - codigoSeguranca: String
-    }
+    Produto <|-- BarraDeChocolate
 
-    class Pagamento {
-        - id: Long
-        - valor: Double
-    }
-
-    Produto "*" --> "1" TipoDeChocolate
+    TipoDeChocolate "1" --> "*" BarraDeChocolate
 
     Usuario "*" --> "*" Produto: listaDesejo
     Usuario "1" *--> "1" Telefone: celular
     Usuario "1" *--> "1" Telefone: whatsapp
     Usuario "1" *--> "*" Endereco
+
+    Municipio "1" *--> "1" Endereco  
+    Municipio "*" *--> "1" Estado
 
     Compra "1" *--> "*" ItemCompra
     Compra "*" --> "1" Usuario
@@ -103,7 +108,5 @@
     Promocao "1" *--> "*" Produto
     Promocao "*" --> "1" CupomDeDesconto
     Promocao "*" --> "1" TipoDePromocao
-
-    Pagamento --> Cartao: utiliza
 
 @enduml

@@ -6,7 +6,13 @@ Ramo: Bomboniere
 Nome: Bombonica
 Tipo de Negócio: B2C
 Referência de interface: https://www.brasilcacau.com.br/
-    
+
+CRUDs QUE SERÃO IMPLEMENTADOS
+- CRUD de Produto; 
+- CRUD de Usuario; 
+- CRUD de Compra;
+- CRUD de Endereco.
+
 DEFININDO O FLUXO DAS ATIVIDADES
 - Acessa o site
 - Exibe as opções de produto
