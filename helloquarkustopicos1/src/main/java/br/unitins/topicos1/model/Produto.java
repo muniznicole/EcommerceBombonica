@@ -7,10 +7,16 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Produto extends DefaultEntity {
+
+    @ManyToOne
+    @JoinColumn(name = "id_Promocao")
+    private Promocao promocao;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +27,13 @@ public class Produto extends DefaultEntity {
     private String descricaoProduto;
     private double preco;
     private Integer estoque;
+
+    public Promocao getPromocao() {
+        return promocao;
+    }
+    public void setPromocao(Promocao promocao) {
+        this.promocao = promocao;
+    }
 
     public Long getId() {
         return id;

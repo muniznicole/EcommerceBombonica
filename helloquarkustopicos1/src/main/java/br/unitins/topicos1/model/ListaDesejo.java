@@ -8,29 +8,29 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Promocao extends DefaultEntity {
+public class ListaDesejo extends DefaultEntity {
 
-    @OneToOne
-    @JoinColumn(name = "id_cupomDesconto")
-    private CupomDesconto cupomDesconto;
+    @ManyToOne
+    @JoinColumn(name = "id_itemProduto")
+    private ItemProduto itemProduto;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+   
+    @Column(length = 20)
+    private double valorTotal;
 
-    @Column(length = 200)
-    private String descricao;
-
-    public CupomDesconto getCupomDesconto() {
-        return cupomDesconto;
+    public ItemProduto getItemProduto() {
+        return itemProduto;
     }
 
-    public void setCupomDesconto(CupomDesconto cupomDesconto) {
-        this.cupomDesconto = cupomDesconto;
+    public void setItemProduto(ItemProduto itemProduto) {
+        this.itemProduto = itemProduto;
     }
 
     public Long getId() {
@@ -41,12 +41,12 @@ public class Promocao extends DefaultEntity {
         this.id = id;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public double getValorTotal() {
+        return valorTotal;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
     }
-    
+
 }

@@ -7,10 +7,25 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Usuario extends DefaultEntity {
+
+    @OneToOne
+    @JoinColumn(name = "id_listaDesejo")
+    private ListaDesejo listaDesejo;
+
+    @OneToOne
+    @JoinColumn(name = "id_telefone")
+    private Telefone telefone;
+
+    @ManyToOne
+    @JoinColumn(name = "id_endereco")
+    private Endereco endereco;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +37,30 @@ public class Usuario extends DefaultEntity {
     private String senha; //pode ter letra e numero
     @Column(length = 11)
     private int cpf; //aceita apenas números
+
+    public ListaDesejo getListaDesejo() {
+        return listaDesejo;
+    }
+
+    public void setListaDesejo(ListaDesejo listaDesejo) {
+        this.listaDesejo = listaDesejo;
+    }
+
+    public Telefone getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(Telefone telefone) {
+        this.telefone = telefone;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 
     public Long getId() {
         return id;

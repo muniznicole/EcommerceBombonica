@@ -4,15 +4,19 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class BarraChocolate extends DefaultEntity {
+public class BarraChocolate extends Produto {
+
+    @ManyToOne
+    @JoinColumn(name = "id_tipoChocolate")
+    private TipoChocolate tipoChocolate;
 
     @Column(length = 100)
-    private TipoChocolate tipoChocolate;
     private double peso;
-    @Column(length = 200)
     private String ingredientes;
     
     public TipoChocolate getTipoChocolate() {

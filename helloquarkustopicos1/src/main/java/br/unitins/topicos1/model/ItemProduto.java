@@ -6,10 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class ItemCompra extends DefaultEntity {
+public class ItemProduto extends DefaultEntity {
+
+    @OneToOne
+    @JoinColumn(name = "id_produdo")
+    private Produto produto;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +24,13 @@ public class ItemCompra extends DefaultEntity {
     private Integer quantidade;
     private double preco;
 
+    public Produto getProduto() {
+        return produto;
+    }
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+    
     public Long getId() {
         return id;
     }
