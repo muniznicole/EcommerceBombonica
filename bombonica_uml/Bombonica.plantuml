@@ -48,7 +48,7 @@
         - id: Long
         - data: Date
         - usuario: Usuario
-        - itemCompra: ItemCompra
+        - itemProduto: ItemProduto
         - valorTotal: Double 
     }
 
@@ -83,13 +83,13 @@
     class Promocao {
         - id: Long
         - descricao: String
-        - desconto: Double
+	- cupomDesconto: CupomDesconto
     }
 
     class CupomDesconto {
         - id: Long
         - codigo: String
-        - valor: Double
+        - valorDesconto: Double
     }
 
     class ListaDesejo {
@@ -98,8 +98,8 @@
         - valorTotal: Double
     }
 
-    Usuario "1" *--> "*" Telefone: Whatsapp
-    Usuario "1" *--> "*" Telefone: Celular
+    Usuario "1" *--> "1" Telefone: Whatsapp
+    Usuario "1" *--> "1" Telefone: Celular
     Telefone "1" *--> "*" TipoTelefone
 
     Usuario "1" *--> "*" Endereco
@@ -115,8 +115,9 @@
     Produto <|-- BarraChocolate
 
     Usuario "1" *--> "1" ListaDesejo
-    Compra "1" --> "1" Promocao
+    ListaDesejo "1" --> "*" ItemProduto 	
     Compra "1" --> "1" CupomDesconto
+    Promocao "1" --> "1" CupomDesconto
     Promocao "1" *--> "*" Produto
 
 @enduml
