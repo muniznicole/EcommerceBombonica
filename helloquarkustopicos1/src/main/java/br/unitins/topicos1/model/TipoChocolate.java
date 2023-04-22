@@ -32,5 +32,9 @@ public enum TipoChocolate {
         throw new IllegalArgumentException("Id inválido:" + id);
     }
 
+    public String getTipoChocolate() {
+        return null;
+    }
+
 }
 

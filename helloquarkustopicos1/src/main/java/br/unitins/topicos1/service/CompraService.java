@@ -7,21 +7,14 @@ import br.unitins.topicos1.dto.CompraResponseDTO;
 
 public interface CompraService {
 
-    // recursos basicos
     List<CompraResponseDTO> getAll();
 
     CompraResponseDTO findById(Long id);
 
-    CompraResponseDTO create(CompraDTO pessoaFisicaDTO);
+    CompraResponseDTO create(CompraDTO compraDTO);
 
-    CompraResponseDTO update(Long id, CompraDTO pessoaFisicaDTO);
+    CompraResponseDTO update(Long id, CompraDTO compraDTO);
 
     void delete(Long id);
-
-    // recursos extras
-
-    List<CompraResponseDTO> findByNome(String nome);
-
-    long count();
-
+   
 }

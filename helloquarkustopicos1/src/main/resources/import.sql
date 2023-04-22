@@ -4,17 +4,15 @@
 -- insert into myentity (id, field) values(nextval('hibernate_sequence'), 'field-2');
 -- insert into myentity (id, field) values(nextval('hibernate_sequence'), 'field-3');
 
-insert into pessoa (nome) values('Marco');
-insert into pessoa (nome) values('Fredson');
+insert into usuario (id, nome, email, senha, cpf) 
+values(1,'Nicole Araujo Muniz','muniznicole@unitins.br','NI1234','024.523.441-17');
 
-insert into pessoafisica(id, cpf, sexo) values (1, '111.111.111-11', 1);
-insert into pessoafisica(id, cpf) values (2, '222.222.222-22');
-
-insert into estado (nome, sigla) values( 'Tocantins', 'TO');
-insert into estado (nome, sigla) values( 'Goiás', 'GO');
-insert into estado (nome, sigla) values( 'São Paulo', 'SP');
-insert into estado (nome, sigla) values( 'Rio de Janeiro', 'RJ');
-insert into estado (nome, sigla) values( 'Pará', 'PA');
+insert into estado (nome) values('Tocantins');
+insert into estado (nome) values('Bahia');
+insert into estado (nome) values('São Paulo');
+insert into estado (nome) values('Pará');
 
 insert into municipio (nome, id_estado) values( 'Palmas', 1);
-insert into municipio (nome, id_estado) values( 'Paraiso do Tocantins', 1);
+insert into municipio (nome, id_estado) values( 'Serrinha', 2);
+insert into municipio (nome, id_estado) values( 'Pilar do Sul', 3);
+insert into municipio (nome, id_estado) values( 'Canaa dos Carajas', 4);

@@ -16,7 +16,6 @@ public class MunicipioResponseDTO {
         this.nome = municipio.getNome();
         this.estado = new HashMap<String, Object>();
         this.estado.put("nome", municipio.getEstado().getNome());
-        this.estado.put("sigla", municipio.getEstado().getSigla());
     }
 
     public Long getId() {
@@ -42,7 +41,4 @@ public class MunicipioResponseDTO {
     public void setEstado(Map<String, Object> estado) {
         this.estado = estado;
     }
-
-    
-    
 }

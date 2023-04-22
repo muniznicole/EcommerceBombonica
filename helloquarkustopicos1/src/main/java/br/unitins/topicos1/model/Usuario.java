@@ -10,7 +10,6 @@ import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.Pattern;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -35,8 +34,7 @@ public class Usuario extends DefaultEntity {
     @Column(length = 100)
     private String nome;
     private String email;
-    private String senha; //pode ter letra e numero
-    @Pattern(regexp = "\\d{3}.\\d{3}.\\d{3}-\\d{2}", message = "CPF inválido")
+    private String senha; 
     private String cpf;
 
     public ListaDesejo getListaDesejo() {

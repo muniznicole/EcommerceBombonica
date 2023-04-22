@@ -1,18 +1,23 @@
 package br.unitins.topicos1.dto;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import java.util.Date;
+import javax.validation.constraints.NotNull;
 
-public record CompraDTO(
+import br.unitins.topicos1.model.Compra;
 
-    @NotBlank(message = "O campo cpf deve ser informado.")
-    @Size(max = 14, message = "O cpf deve posssuir no máximo 14 caracteres.")
-    String cpf,
+public record CompraDTO (
+    @NotNull(message = "O item de produto é obrigatório.") Long itemProdutoId,
+    @NotNull(message = "O usuário é obrigatório.") Long usuarioId,
+    @NotNull(message = "A data da compra é obrigatória.") Date date
+)
+{
 
-    Integer sexo,
-
-    @NotBlank(message = "O campo nome deve ser informado.")
-    String nome
-) {
-  
+    public static CompraDTO toDTO(Compra compra) {
+        return new CompraDTO(
+                compra.getItemProduto().getId(),
+                compra.getUsuario().getId(),
+                compra.getDate());
+    }
 }
+
+

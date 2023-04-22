@@ -51,8 +51,7 @@ public class EstadoResource {
 
          Estado entity = repository.findById(id);
 
-         entity.setNome(estado.getNome());
-         entity.setSigla(estado.getSigla());
+         entity.setNome(estado.getNome());      
 
         return entity;
     }

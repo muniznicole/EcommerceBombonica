@@ -1,20 +1,21 @@
 package br.unitins.topicos1.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-
+import java.util.Date;
 import br.unitins.topicos1.model.Compra;
-import br.unitins.topicos1.model.Endereco;
 
 public record CompraResponseDTO(
     Long id,
-    String cpf,
-    String nome,
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    Endereco sexo
+    Date data,
+    ProdutoResponseDTO produto,
+    UsuarioResponseDTO usuario
 ) {
-    public CompraResponseDTO(Compra pf) {
-        this(pf.getId(), pf.getCpf(), pf.getNome(), pf.getSexo()); 
+    public CompraResponseDTO(Compra compra) {
+        this(
+            compra.getId(),
+            compra.getDate(),
+            new ProdutoResponseDTO(compra.getItemProduto().getProduto()),
+            new UsuarioResponseDTO(compra.getUsuario())
+        );
     }
-
-
 }
+

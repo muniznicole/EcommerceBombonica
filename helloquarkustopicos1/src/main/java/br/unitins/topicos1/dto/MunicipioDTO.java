@@ -5,10 +5,10 @@ import javax.validation.constraints.NotNull;
 
 public class MunicipioDTO {
 
-    @NotBlank(message = "O campo nome deve ser informado.")
+    @NotBlank(message = "O campo nome deve ser informado!")
     private String nome;
     
-    @NotNull(message = "O campo idEstado deve ser informado.")
+    @NotNull(message = "O campo idEstado deve ser informado!")
     private Long idEstado;
 
     public String getNome() {

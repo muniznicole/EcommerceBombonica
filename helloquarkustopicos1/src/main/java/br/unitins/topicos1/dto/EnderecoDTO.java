@@ -1,37 +1,35 @@
-package br.unitins.topicos1.model;
+package br.unitins.topicos1.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Positive;
 
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public class Endereco extends DefaultEntity {
-    
-    @OneToOne
-    @JoinColumn(name = "id_municipio")
-    private Municipio municipio;
+public class EnderecoDTO {
 
-    @OneToOne
-    @JoinColumn(name = "id_estado")
-    private Estado estado;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Positive(message = "Id inválido")
     private Long id;
 
-    @Column(length = 9)
+    @NotEmpty(message = "CEP obrigatório")
+    @Pattern(regexp = "\\d{5}-\\d{3}", message = "CEP inválido")
     private String cep;
+
+    @NotEmpty(message = "Logradouro obrigatório")
     private String logradouro;
+
+    @NotNull(message = "Número obrigatório")
     private Integer numero;
+
     private String complemento;
+
+    @NotEmpty(message = "Bairro obrigatório")
     private String bairro;
+
+    @NotNull(message = "Município obrigatório")
+    private MunicipioDTO municipio;
+
+    @NotNull(message = "Estado obrigatório")
+    private EstadoDTO estado;
 
     public Long getId() {
         return id;
@@ -81,12 +79,20 @@ public class Endereco extends DefaultEntity {
         this.bairro = bairro;
     }
 
-    public Municipio getEstado() {
-        return null;
+    public MunicipioDTO getMunicipio() {
+        return municipio;
     }
 
-    public Object getMunicipio() {
-        return null;
+    public void setMunicipio(MunicipioDTO municipio) {
+        this.municipio = municipio;
+    }
+
+    public EstadoDTO getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoDTO estado) {
+        this.estado = estado;
     }
 
 }

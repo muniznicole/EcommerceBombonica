@@ -8,14 +8,16 @@ Projeto para a disciplina de Tópicos 1
 - Referência de interface: https://www.brasilcacau.com.br/
 
 CRUDs QUE SERÃO IMPLEMENTADOS
-- CRUD de Produto;
-- CRUD de BarraChocolate; 
-- CRUD de Usuario; 
-- CRUD de Compra;
-- CRUD de CupomDesconto;
+- CRUD de Usuario;
 - CRUD de Endereco;
 - CRUD de Estado;
 - CRUD de Municipio.
+- CRUD de Produto;
+- CRUD de BarraChocolate; 
+- CRUD de Compra;
+- CRUD de Promocao;
+- CRUD de CupomDesconto;
+- CRUD de ListaDesejo
 
 DEFININDO O FLUXO DAS ATIVIDADES
 - Acessa o site
