@@ -2,10 +2,10 @@
 
 Projeto para a disciplina de Tópicos 1
 
-Ramo: Bomboniere;
-Nome: Bombonica;
-Tipo de Negócio: B2C;
-Referência de interface: https://www.brasilcacau.com.br/;
+- Ramo: Bomboniere
+- Nome: Bombonica
+- Tipo de Negócio: B2C
+- Referência de interface: https://www.brasilcacau.com.br/
 
 CRUDs QUE SERÃO IMPLEMENTADOS
 - CRUD de Produto;
@@ -13,7 +13,6 @@ CRUDs QUE SERÃO IMPLEMENTADOS
 - CRUD de Usuario; 
 - CRUD de Compra;
 - CRUD de CupomDesconto;
-- CRUD de TipoPromocao;
 - CRUD de Endereco;
 - CRUD de Estado;
 - CRUD de Municipio.
