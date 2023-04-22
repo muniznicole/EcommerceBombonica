@@ -1,5 +1,6 @@
 package br.unitins.topicos1.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -9,11 +10,11 @@ import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
 @ApplicationScoped
 public class CompraRepository implements PanacheRepository<Compra> {
-    
-    public List<Compra> findByNome(String nome){
-        if (nome == null)
+
+    public List<Compra> findByData(Date data) {
+        if (data == null)
             return null;
-        return find("UPPER(nome) LIKE ?1 ", "%"+nome.toUpperCase()+"%").list();
+        return find("data", data).list();
     }
 
 }

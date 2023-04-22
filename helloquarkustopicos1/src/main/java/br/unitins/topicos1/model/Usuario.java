@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -35,8 +36,8 @@ public class Usuario extends DefaultEntity {
     private String nome;
     private String email;
     private String senha; //pode ter letra e numero
-    @Column(length = 11)
-    private int cpf; //aceita apenas números
+    @Pattern(regexp = "\\d{3}.\\d{3}.\\d{3}-\\d{2}", message = "CPF inválido")
+    private String cpf;
 
     public ListaDesejo getListaDesejo() {
         return listaDesejo;
@@ -94,11 +95,11 @@ public class Usuario extends DefaultEntity {
         this.senha = senha;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
     

@@ -15,6 +15,10 @@ import javax.persistence.ManyToOne;
 public class ListaDesejo extends DefaultEntity {
 
     @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+
+    @ManyToOne
     @JoinColumn(name = "id_itemProduto")
     private ItemProduto itemProduto;
 
@@ -24,6 +28,14 @@ public class ListaDesejo extends DefaultEntity {
    
     @Column(length = 20)
     private double valorTotal;
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
     public ItemProduto getItemProduto() {
         return itemProduto;

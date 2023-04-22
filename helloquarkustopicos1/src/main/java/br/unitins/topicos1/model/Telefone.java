@@ -21,11 +21,11 @@ public class Telefone extends DefaultEntity {
     private Long id;
 
     @Column(length = 10)
-    private int codigoArea;
+    private String codigoArea;
     private Integer numero;
     private TipoTelefone tipo;
 
-    public Telefone(int codigoArea, Integer numero, TipoTelefone tipo) {
+    public Telefone(String codigoArea, Integer numero, TipoTelefone tipo) {
         this.codigoArea = codigoArea;
         this.numero = numero;
         this.tipo = tipo;
@@ -39,11 +39,11 @@ public class Telefone extends DefaultEntity {
         this.id = id;
     }
 
-    public int getCodigoArea() {
+    public String getCodigoArea() {
         return codigoArea;
     }
     
-    public void setCodigoArea(int codigoArea) {
+    public void setCodigoArea(String codigoArea) {
         this.codigoArea = codigoArea;
     }
 

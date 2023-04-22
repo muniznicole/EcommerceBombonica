@@ -2,13 +2,13 @@ package br.unitins.topicos1.repository;
 
 import javax.enterprise.context.ApplicationScoped;
 
-import br.unitins.topicos1.model.Endereco;
+import br.unitins.topicos1.model.Telefone;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
 @ApplicationScoped
-public class EnderecoRepository implements PanacheRepository<Endereco> {
+public class TelefoneRepository implements PanacheRepository<Telefone> {
 
-    public Endereco findByUsuarioId(Long usuarioId) {
+    public Telefone findByUsuarioId(Long usuarioId) {
         return find("usuario.id", usuarioId).firstResult();
     }
 

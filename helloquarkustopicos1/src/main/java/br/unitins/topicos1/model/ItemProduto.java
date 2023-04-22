@@ -27,10 +27,11 @@ public class ItemProduto extends DefaultEntity {
     public Produto getProduto() {
         return produto;
     }
+    
     public void setProduto(Produto produto) {
         this.produto = produto;
     }
-    
+
     public Long getId() {
         return id;
     }
